@@ -1,0 +1,109 @@
+/* Page background */
+:host {
+  display: block;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input section */
+div {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #4caf50;
+}
+
+/* Add / Update button */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Table header */
+th {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+/* Table rows */
+td {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Image */
+img {
+  border-radius: 5px;
+}
+
+/* Edit button */
+td button {
+  margin: 0 5px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+td button:first-child {
+  background: #2196f3;
+}
+
+td button:first-child:hover {
+  background: #1976d2;
+}
+
+/* Delete button */
+td button:last-child {
+  background: #f44336;
+}
+
+td button:last-child:hover {
+  background: #d32f2f;
+}

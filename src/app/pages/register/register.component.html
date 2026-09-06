@@ -1,0 +1,16 @@
+<div class="container">
+
+  <h2>Register</h2>
+
+  <input type="text" placeholder="Username" [(ngModel)]="username" />
+  <input type="text" placeholder="Email" [(ngModel)]="email" />
+  <input type="password" placeholder="Password" [(ngModel)]="password" />
+
+  <button (click)="register()">Register</button>
+
+  <p>
+    Already user?
+    <a (click)="goToLogin()">Login</a>
+  </p>
+
+</div>

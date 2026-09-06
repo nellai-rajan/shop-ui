@@ -1,0 +1,82 @@
+.auth-box {
+  width: 320px;
+  margin: 100px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4facfe;
+  color: white;
+   transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+button:hover {
+  background: #00f2fe;
+   transform: translateY(-2px);
+}
+
+a {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: blue;
+}
+
+.msg {
+  margin-top: 10px;
+  color: green;
+}
+
+.login-container {
+  max-width: 350px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+
+
+.auth-box input,
+.password-box input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; /* every input measures the same way */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.password-box {
+  position: relative;
+  width: 100%; /* matches the Username input's full width exactly */
+}
+
+.password-box input {
+  padding-right: 40px; /* only the password input needs room for the icon */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  color: #555;
+  font-size: 20px;
+}
+
+.eye-icon:hover {
+  color: #222;
+}

@@ -1,0 +1,45 @@
+<h2>Admin Product Panel</h2>
+
+<div>
+  <input type="text" placeholder="Name" [(ngModel)]="name">
+  <input type="text" placeholder="Price" [(ngModel)]="price">
+
+  <select [(ngModel)]="unit">
+    <option value="kg">Kg</option>
+    <option value="pc">Piece</option>
+    <option value="pkt">Packet</option>
+  </select>
+
+
+  <input type="number" [(ngModel)]="quantity" min="1" placeholder="Enter quantity" />
+
+  <input type="text" placeholder="Image URL" [(ngModel)]="img">
+
+  <button (click)="add()">
+    {{ editId ? 'Update Product' : 'Add Product' }}
+  </button>
+</div>
+
+<hr>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Unit</th>
+    <th>Image</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let p of products; let i = index">
+    <td>{{ p.name }}</td>
+    <td>{{ p.price }}</td>
+    <td>{{ p.quantity }} {{ p.unit }}</td>
+    <td><img [src]="p.img" width="50"></td>
+
+    <td>
+      <button (click)="edit(i)">Edit</button>
+      <button (click)="remove(p._id)">Delete</button>
+    </td>
+  </tr>
+</table>

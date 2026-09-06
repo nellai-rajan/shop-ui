@@ -1,0 +1,90 @@
+<h2>Order Page</h2>
+
+<div class="container">
+
+  <!-- PRODUCT LIST -->
+  <div class="products">
+    <h3>Products</h3>
+
+    <div class="product-card" *ngFor="let p of products">
+
+      <img [src]="p.img" />
+
+      <div class="info">
+        <h4>{{ p.name }}</h4>
+
+        <p>₹ {{ p.price }} / {{ p.unit || 'kg' }}</p>
+
+        <!-- QUANTITY INPUT -->
+        <input
+          type="number"
+          [(ngModel)]="p.kg"
+          min="1"
+          step="1"
+        />
+
+        <button (click)="addToCart(p)">
+          🛒 Add To Cart
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CUSTOMER -->
+  <div class="customer-box">
+    <h3>Customer Details</h3>
+
+    <input
+      type="text"
+      placeholder="Customer Name"
+      [(ngModel)]="customerName"
+    />
+
+    <input
+      type="text"
+      placeholder="Phone Number"
+      [(ngModel)]="phone"
+    />
+  </div>
+
+  <!-- CART -->
+  <div class="cart">
+    <h3>Cart</h3>
+
+    <div *ngIf="cart.length === 0">
+      Cart is empty
+    </div>
+
+    <div class="cart-item" *ngFor="let c of cart; let i = index">
+
+      <div>
+        <p><b>{{ c.name }}</b></p>
+
+        <p>
+          {{ c.quantity }} {{ c.unit || 'kg' }} × ₹ {{ c.price }}
+        </p>
+      </div>
+
+      <div>
+        <p>₹ {{ c.price * c.quantity }}</p>
+
+        <button (click)="removeFromCart(i)">
+          Remove
+        </button>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <h3>Total: ₹ {{ getTotal() }}</h3>
+
+    <button class="order-btn" (click)="placeOrder()">
+      Place Order
+    </button>
+
+  </div>
+
+</div>

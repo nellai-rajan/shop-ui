@@ -1,0 +1,52 @@
+<div class="auth-box">
+
+  <h2 *ngIf="mode==='login'">Login</h2>
+  <h2 *ngIf="mode==='forgot'">Forgot Password</h2>
+  <h2 *ngIf="mode==='reset'">Reset Password</h2>
+
+  <!-- LOGIN -->
+  <form *ngIf="mode==='login'" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="input-box">
+
+      <div class="name-box">
+        <input formControlName="username" placeholder="Username">
+      </div>
+      <div class="password-box">
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password" />
+  
+        <mat-icon class="eye-icon" (click)="togglePassword()">
+          {{ showPassword ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+      </div>
+    </div>
+    <button  type="submit">Login</button>
+
+    <p>
+      New user?
+      <a (click)="goToRegister()">Register</a>
+    </p>
+
+    <a (click)="mode='forgot'">Forgot Password?</a>
+  </form>
+
+  <!-- FORGOT -->
+  <form *ngIf="mode==='forgot'" [formGroup]="forgotForm">
+    <input formControlName="email" placeholder="Email">
+    <button type="button" (click)="sendOtp()">Send OTP</button>
+
+    <a (click)="mode='login'">Back to Login</a>
+  </form>
+
+  <!-- RESET -->
+  <form *ngIf="mode==='reset'" [formGroup]="resetForm">
+    <input formControlName="email" placeholder="Email">
+    <input formControlName="otp" placeholder="OTP">
+    <input type="password" formControlName="newPassword" placeholder="New Password">
+    <button type="button" (click)="reset()">Reset Password</button>
+
+    <a (click)="mode='login'">Back to Login</a>
+  </form>
+
+  <p class="msg">{{ msg }}</p>
+
+</div>

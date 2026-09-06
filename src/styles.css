@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+header {
+  background: green;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 150px;
+}
+
+.grid {
+  display: flex;
+  gap: 10px;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
