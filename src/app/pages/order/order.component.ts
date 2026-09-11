@@ -119,8 +119,13 @@ export class OrderComponent implements OnInit {
     this.ps.placeOrder(orderPayload).subscribe((res: any) => {
 
       if (res?.whatsappUrls?.length) {
-        res.whatsappUrls.forEach((url: string) => {
+        // res.whatsappUrls.forEach((url: string) => {
+        //   window.open(url, '_blank');
+        // });
+        res?.whatsappUrls?.forEach((url: string, i: number) => {
+          setTimeout(() => {
           window.open(url, '_blank');
+          }, i * 800);
         });
       }
 
